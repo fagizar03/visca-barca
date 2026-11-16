@@ -1,0 +1,556 @@
+
+/* =========================================
+   1. PENGATURAN DASAR
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    line-height: 1.7;
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(rgba(0, 25, 15, 0.40), rgba(0, 25, 15, 0.40)),
+        url("../img/lingkungan.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* =========================================
+   2. HEADER DAN LOGO
+========================================= */
+
+header {
+    width: 100%;
+    min-height: 85px;
+
+    background-color: rgba(255, 255, 255, 0.95);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 7%;
+    flex-wrap: wrap;
+}
+
+.logo h2 {
+    color: #168447;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo span,
+.logo p {
+    color: #555;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   3. NAVIGASI
+========================================= */
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+nav a {
+    display: inline-block;
+
+    text-decoration: none;
+    color: #333;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    padding: 9px 16px;
+    border-radius: 7px;
+
+    transition: 0.3s;
+}
+
+/* Efek saat kursor diarahkan ke menu */
+
+nav a:hover {
+    background-color: #e1f3e7;
+    color: #168447;
+}
+
+/* Menu halaman yang sedang dibuka */
+
+nav a.aktif {
+    background-color: #168447;
+    color: white;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* =========================================
+   4. HALAMAN BERANDA
+========================================= */
+
+.beranda {
+    min-height: 580px;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("../img/lingkungan.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 8%;
+    color: white;
+    text-align: center;
+}
+
+.isi-beranda {
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.isi-beranda h1 {
+    font-size: 45px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+
+    text-align: center;
+    text-shadow: 2px 2px 5px black;
+}
+
+.isi-beranda p {
+    font-size: 17px;
+    margin-bottom: 30px;
+
+    text-align: center;
+    text-shadow: 1px 2px 4px black;
+}
+
+
+/* =========================================
+   5. TOMBOL
+========================================= */
+
+.tombol {
+    display: inline-block;
+
+    background-color: #168447;
+    color: white;
+
+    padding: 12px 25px;
+    border-radius: 6px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.tombol:hover {
+    background-color: #0c5c30;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   6. JUDUL HALAMAN
+========================================= */
+
+.judul-halaman {
+    width: 85%;
+    margin: 35px auto;
+
+    padding: 55px 8%;
+
+    background: transparent !important;
+    border-radius: 0;
+    box-shadow: none;
+
+    text-align: center;
+    color: white;
+}
+
+.judul-halaman h1 {
+    color: white;
+    font-size: 38px;
+    margin-bottom: 20px;
+
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.95);
+}
+
+.judul-halaman p {
+    max-width: 850px;
+    margin: auto;
+
+    font-size: 17px;
+    color: white;
+
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.95);
+}
+
+
+/* =========================================
+   7. BAGIAN INFORMASI
+========================================= */
+
+.informasi {
+    width: 85%;
+    margin: 35px auto;
+
+    padding: 40px;
+
+    background: transparent !important;
+    box-shadow: none;
+}
+
+.informasi h2 {
+    text-align: center;
+
+    color: white;
+    font-size: 30px;
+
+    margin-bottom: 30px;
+
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.95);
+}
+
+
+/* =========================================
+   8. KUMPULAN KARTU
+========================================= */
+
+.kumpulan-kartu,
+.container-kartu {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.kartu {
+    background-color: rgba(255, 255, 255, 0.90);
+
+    padding: 25px;
+    border-radius: 10px;
+
+    border-left: 5px solid #168447;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+
+    transition: 0.3s;
+}
+
+.kartu:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.25);
+}
+
+.kartu h3 {
+    color: #08783c;
+    font-size: 20px;
+
+    margin-bottom: 12px;
+}
+
+.kartu p {
+    color: #333;
+    font-size: 15px;
+}
+
+
+/* =========================================
+   9. BAGIAN TENTANG DAN PESAN
+========================================= */
+
+.tentang {
+    width: 85%;
+    margin: 35px auto;
+
+    padding: 40px;
+
+    background: transparent !important;
+    box-shadow: none;
+
+    text-align: center;
+    color: white;
+}
+
+.tentang h2 {
+    color: white;
+    font-size: 28px;
+
+    margin-bottom: 18px;
+
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.95);
+}
+
+.tentang p {
+    color: white;
+    font-size: 16px;
+
+    margin-bottom: 20px;
+
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.95);
+}
+
+
+/* =========================================
+   10. CHECKLIST AKSI LINGKUNGAN
+========================================= */
+
+.daftar-aksi {
+    max-width: 600px;
+    margin: 25px auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    text-align: left;
+}
+
+.daftar-aksi label {
+    background-color: rgba(255, 255, 255, 0.90);
+
+    color: #333;
+
+    padding: 13px 18px;
+    border-radius: 7px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.daftar-aksi label:hover {
+    background-color: white;
+}
+
+.daftar-aksi input {
+    margin-right: 10px;
+    accent-color: #168447;
+}
+
+#hasil-aksi {
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+
+    margin-top: 20px;
+
+    text-shadow: 2px 2px 5px black;
+}
+
+
+/* =========================================
+   11. BACKGROUND HALAMAN AKSI
+========================================= */
+
+body.halaman-aksi {
+    background-image:
+        linear-gradient(rgba(0, 25, 15, 0.45), rgba(0, 25, 15, 0.45)),
+        url("../img/aksi.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* =========================================
+   12. BACKGROUND HALAMAN MASALAH
+========================================= */
+
+body.halaman-masalah {
+    background-image:
+        linear-gradient(rgba(0, 25, 15, 0.45), rgba(0, 25, 15, 0.45)),
+        url("../img/masalah.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* =========================================
+   13. FOOTER
+========================================= */
+
+footer {
+    background-color: rgba(15, 75, 42, 0.95);
+
+    color: white;
+    text-align: center;
+
+    padding: 20px;
+    margin-top: 40px;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   14. RESPONSIVE LAPTOP DAN TABLET
+========================================= */
+
+@media screen and (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+
+        padding: 20px 5%;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .beranda {
+        min-height: 450px;
+        padding: 40px 6%;
+    }
+
+    .isi-beranda h1 {
+        font-size: 32px;
+    }
+
+    .isi-beranda p {
+        font-size: 15px;
+    }
+
+    .judul-halaman,
+    .informasi,
+    .tentang {
+        width: 92%;
+        padding: 30px 20px;
+    }
+
+    .judul-halaman h1 {
+        font-size: 29px;
+    }
+
+    .informasi h2,
+    .tentang h2 {
+        font-size: 24px;
+    }
+
+    .kumpulan-kartu,
+    .container-kartu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================
+   15. RESPONSIVE HP
+========================================= */
+
+@media screen and (max-width: 480px) {
+
+    header {
+        padding: 18px 5%;
+    }
+
+    .logo h2 {
+        font-size: 25px;
+    }
+
+    nav ul {
+        gap: 6px;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 7px 9px;
+    }
+
+    .beranda {
+        min-height: 400px;
+        padding: 35px 6%;
+    }
+
+    .isi-beranda h1 {
+        font-size: 28px;
+    }
+
+    .isi-beranda p {
+        font-size: 14px;
+    }
+
+    .judul-halaman,
+    .informasi,
+    .tentang {
+        width: 94%;
+        padding: 25px 15px;
+    }
+
+    .judul-halaman h1 {
+        font-size: 25px;
+    }
+
+    .judul-halaman p {
+        font-size: 14px;
+    }
+
+    .informasi h2,
+    .tentang h2 {
+        font-size: 21px;
+    }
+
+    .kumpulan-kartu,
+    .container-kartu {
+        grid-template-columns: 1fr;
+    }
+
+    .kartu {
+        padding: 20px;
+    }
+
+    .kartu h3 {
+        font-size: 18px;
+    }
+
+    .kartu p {
+        font-size: 14px;
+    }
+
+    .daftar-aksi label {
+        font-size: 14px;
+    }
+}
